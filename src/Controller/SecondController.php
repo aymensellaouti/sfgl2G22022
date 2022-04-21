@@ -14,9 +14,9 @@ class SecondController extends AbstractController
     public function index($name, Request $request): Response
     {
 //        dump($request);
-//        if($name % 3 == 0) {
-//            $this->addFlash('success','ca marche :)');
-//        }
+        if($name % 3 == 0) {
+            $this->addFlash('success','ca marche :)');
+        }
         return $this->render('second/index.html.twig', [
             'controller_name' => 'SecondController',
             'esm' => $name,
