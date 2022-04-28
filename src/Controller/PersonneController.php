@@ -18,7 +18,6 @@ class PersonneController extends AbstractController
     {
         $this->manager = $doctrine->getManager();
     }
-
     #[Route('/', name: 'app_personne')]
     public function index(): Response
     {

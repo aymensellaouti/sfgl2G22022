@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Hello VoitureController!{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <tr>
+            <th>Marque</th>
+            <th>Color</th>
+            <th>Matricule</th>
+            <th>Owner</th>
+            <th>Edit</th>
+        </tr>
+        {% for voitrue in voitures %}
+            <tr>
+                <td>{{ voitrue.marque }}</td>
+                <td>{{ voitrue.color }}</td>
+                <td>{{ voitrue.matricule }}</td>
+
+                <td>
+                    {% if voitrue.owner %}
+                        {{ voitrue.owner.name }}
+                    {% else %}
+                        For sale
+                    {% endif %}
+                </td>
+                <td><a href="{{ path('app_voiture_edit', {id: voitrue.id}) }}">Edit</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
